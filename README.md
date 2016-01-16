@@ -1,10 +1,9 @@
-[![Issue Stats](http://issuestats.com/github/bomret/Unit/badge/issue)](http://issuestats.com/github/bomret/Unit)
-[![Issue Stats](http://issuestats.com/github/bomret/Unit/badge/pr)](http://issuestats.com/github/bomret/Unit)
+[![Nuget](https://img.shields.io/nuget/v/TheVoid.svg)](https://www.nuget.org/packages/TheVoid/)
 
 |CI Provider|Status|
 |----------|------------|
-|Travis CI|[![Travis CI](https://travis-ci.org/Bomret/Unit.svg?branch=master)](https://travis-ci.org/Bomret/Unit)|
-|AppVeyor|[![AppVeyor](https://ci.appveyor.com/api/projects/status/muw7l4o91ohjoui5?svg=true)](https://ci.appveyor.com/project/StefanReichel/unit)|
+|Travis CI|[![Travis CI](https://img.shields.io/travis/Bomret/Unit/master.svg)](https://travis-ci.org/Bomret/Unit)|
+|AppVeyor|[![AppVeyor](https://img.shields.io/appveyor/ci/stefanreichel/unit/master.svg)](https://ci.appveyor.com/project/StefanReichel/unit)|
 
 # Unit
 
