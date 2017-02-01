@@ -336,3 +336,7 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/csharp,f#,macos,windows
+
+
+### Project specific ###
+docs/_site
