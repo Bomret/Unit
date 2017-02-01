@@ -27,8 +27,6 @@
       },
       {
         "files": [
-          "articles/**.md",
-          "articles/**/toc.yml",
           "toc.yml",
           "*.md"
         ],
@@ -66,6 +64,11 @@
     "template": [
       "default"
     ],
+    "globalMetadata": {
+      "_appTitle": "The Void Documentation",
+      "_appFooter": "The Void",
+      "_disableContribution": true
+    },
     "postProcessors": [],
     "noLangKeyword": false
   }
