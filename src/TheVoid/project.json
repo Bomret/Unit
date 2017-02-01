@@ -13,8 +13,8 @@
     "summary": "Represents a type for the void keyword.",
     "tags": ["unit", "void", "nothing", "return"],
     "owners": ["Stefan Reichel"],
-    "releaseNotes": "FEATURE: netstandard1.0 and net40 supported",
-    "iconUrl": "https://raw.githubusercontent.com/bomret/Unit/master/docs/files/img/logo.png",
+    "releaseNotes": "Feature: netstandard1.0 and net40 supported",
+    "iconUrl": "https://raw.githubusercontent.com/bomret/Unit/master/docs/images/logo.png",
     "projectUrl": "http://github.com/bomret/Unit",
     "licenseUrl": "http://github.com/bomret/Unit/blob/master/LICENSE.txt",
     "repository": {
