@@ -7,7 +7,6 @@ open Fake
 open Fake.Git
 open Fake.ReleaseNotesHelper
 open Fake.UserInputHelper
-open Fake.DocFxHelper
 open System
 open System.IO
 
@@ -125,13 +124,18 @@ Target "Publish" <| fun _ ->
 // --------------------------------------------------------------------------------------
 // Generate the documentation
 
+let runDocFx args =
+  match ExecProcess (fun info ->
+    info.FileName <- Directory.GetFiles(".", "docfx.exe", SearchOption.AllDirectories) |> Seq.head
+    info.Arguments <- args) (TimeSpan.FromMinutes 2.) with
+    | 0 -> printf "'docfx %s' ran successfully" args
+    | x -> failwithf "'docfx %s' has failed with exit code %i" args x
+
 Target "GenerateDocs" <| fun _ ->
-  DocFx id
+  runDocFx ("build docs" @@ "docfx.json")
 
 Target "ServeDocs" <| fun _ ->
-  DocFx <| fun p ->
-    { p with
-        Serve = true }
+  runDocFx ("build docs" @@ "docfx.json --serve")
 
 // --------------------------------------------------------------------------------------
 // Release Scripts
