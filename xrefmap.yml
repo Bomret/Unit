@@ -1,0 +1,39 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: TheVoid
+  name: TheVoid
+  href: api/TheVoid.html
+  commentId: N:TheVoid
+  fullName: TheVoid
+  nameWithType: TheVoid
+- uid: TheVoid.Unit
+  name: Unit
+  href: api/TheVoid.Unit.html
+  commentId: T:TheVoid.Unit
+  fullName: TheVoid.Unit
+  nameWithType: Unit
+- uid: TheVoid.Unit.Default
+  name: Default
+  href: api/TheVoid.Unit.html#TheVoid_Unit_Default
+  commentId: P:TheVoid.Unit.Default
+  fullName: TheVoid.Unit.Default
+  nameWithType: Unit.Default
+- uid: TheVoid.Unit.Default*
+  name: Default
+  href: api/TheVoid.Unit.html#TheVoid_Unit_Default_
+  commentId: Overload:TheVoid.Unit.Default
+  fullName: TheVoid.Unit.Default
+  nameWithType: Unit.Default
+- uid: TheVoid.Unit.ToString
+  name: ToString()
+  href: api/TheVoid.Unit.html#TheVoid_Unit_ToString
+  commentId: M:TheVoid.Unit.ToString
+  fullName: TheVoid.Unit.ToString()
+  nameWithType: Unit.ToString()
+- uid: TheVoid.Unit.ToString*
+  name: ToString
+  href: api/TheVoid.Unit.html#TheVoid_Unit_ToString_
+  commentId: Overload:TheVoid.Unit.ToString
+  fullName: TheVoid.Unit.ToString
+  nameWithType: Unit.ToString
