@@ -68,7 +68,7 @@ Target "Clean" <| fun _ ->
     [ "bin"
       "temp" ]
 
-Target "CleanDocs" <| fun _ ->
+Target "Docs:Clean" <| fun _ ->
   CleanDirs
     [ "docs" @@ "_site"
       "docs" @@ "_api" ]
@@ -131,16 +131,16 @@ let runDocFx args =
     | 0 -> printf "'docfx %s' ran successfully" args
     | x -> failwithf "'docfx %s' has failed with exit code %i" args x
 
-Target "GenerateDocs" <| fun _ ->
+Target "Docs:Generate" <| fun _ ->
   runDocFx ("build docs" @@ "docfx.json")
 
-Target "ServeDocs" <| fun _ ->
+Target "Docs:Serve" <| fun _ ->
   runDocFx ("build docs" @@ "docfx.json --serve")
 
 // --------------------------------------------------------------------------------------
 // Release Scripts
 
-Target "ReleaseDocs" <| fun _ ->
+Target "Release:Docs" <| fun _ ->
   let tempDocsDir = "temp/gh-pages"
   CleanDir tempDocsDir
   Repository.cloneSingleBranch "" (gitHome + "/" + gitName + ".git") "gh-pages" tempDocsDir
@@ -153,7 +153,7 @@ Target "ReleaseDocs" <| fun _ ->
 #load "paket-files/fsharp/FAKE/modules/Octokit/Octokit.fsx"
 open Octokit
 
-Target "Release" <| fun _ ->
+Target "Release:Github" <| fun _ ->
   let user =
     match getBuildParam "github-user" with
     | s when not (String.IsNullOrWhiteSpace s) -> s
@@ -184,6 +184,8 @@ Target "Release" <| fun _ ->
 // --------------------------------------------------------------------------------------
 // Run all targets by default. Invoke 'build <Target>' to override
 
+Target "Release" DoNothing
+
 Target "All" DoNothing
 
 "Clean"
@@ -193,16 +195,24 @@ Target "All" DoNothing
   ==> "Pack"
   ==> "All"
 
-"CleanDocs"
-  ==> "GenerateDocs"
+"Docs:Clean"
+  ==> "Docs:Generate"
 
-"CleanDocs"
-  ==> "ServeDocs"
+"Docs:Clean"
+  ==> "Docs:Serve"
+
+"Docs:Generate"
+  ==> "Release:Docs"
 
 "Pack"
   ==> "Publish"
 
 "Pack"
+  ==> "Release:Github"
+
+"Publish"
+  ==> "Release:Github"
+  ==> "Release:Docs"
   ==> "Release"
 
 RunTargetOrDefault "All"
