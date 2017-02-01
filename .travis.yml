@@ -1,9 +1,11 @@
 language: csharp
+dist: trusty
+sudo: required
+dotnet: 1.0.0-preview2-1-003177
+mono: latest
 
-sudo: false  # use the new container-based Travis infrastructure 
+before_script:
+  - chmod +x ./build.sh
 
-before_install:
-  - chmod +x build.sh
- 
-script: 
-  - ./build.sh All
+script:
+  - ./build.sh

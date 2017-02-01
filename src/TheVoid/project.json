@@ -1,0 +1,33 @@
+{
+  "name": "TheVoid",
+  "title": "The Void",
+  "description": "Represents a type for the void keyword.",
+  "version": "1.0.0-*",
+  "authors": ["Stefan Reichel"],
+  "buildOptions": {
+    "debugType": "portable",
+    "optimize": true,
+    "xmlDoc": true
+  },
+  "packOptions": {
+    "summary": "Represents a type for the void keyword.",
+    "tags": ["unit", "void", "nothing", "return"],
+    "owners": ["Stefan Reichel"],
+    "releaseNotes": "FEATURE: netstandard1.0 and net40 supported",
+    "iconUrl": "https://raw.githubusercontent.com/bomret/Unit/master/docs/files/img/logo.png",
+    "projectUrl": "http://github.com/bomret/Unit",
+    "licenseUrl": "http://github.com/bomret/Unit/blob/master/LICENSE.txt",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/Bomret/Unit"
+    }
+  },
+  "frameworks": {
+    "net40": {},
+    "netstandard1.0": {
+      "dependencies": {
+        "System.Diagnostics.Debug": "4.3.0"
+      }
+    }
+  }
+}

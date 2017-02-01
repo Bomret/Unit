@@ -11,8 +11,9 @@ if errorlevel 1 (
   exit /b %errorlevel%
 )
 
-IF NOT EXIST build.fsx (
-  .paket\paket.exe update
-  packages\build\FAKE\tools\FAKE.exe init.fsx
+dotnet restore
+if errorlevel 1 (
+  exit /b %errorlevel%
 )
-packages\build\FAKE\tools\FAKE.exe build.fsx %*
+
+packages\FAKE\tools\FAKE.exe build.fsx %*
