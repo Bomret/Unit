@@ -210,8 +210,7 @@ Target "All" DoNothing
 "Pack"
   ==> "Release:Github"
 
-"Publish"
-  ==> "Release:Github"
+"Release:Github"
   ==> "Release:Docs"
   ==> "Release"
 
